@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      src="{{ url_for('static', filename='img/cat.webp') }}"
+      alt=""
+      srcset=""
+    />
+
+    <!-- Использование переменных из render_template. JINJA -->
+    <p>{{ name }}</p>
+    <p>{{ age }}</p>
+    <p>{{ surname }}</p>
+
+    <!-- Использование блоков кода. JINJA -->
+    {% if age < 1 %}
+    <p>Вы младенец</p>
+    {% elif age > 5 %}
+    <p>Вы больше младенца</p>
+    {% else %}
+    <p>Что-то среднее</p>
+    {% endif %}
+  </body>
+</html>
